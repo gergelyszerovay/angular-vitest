@@ -68,18 +68,14 @@
           "builder": "@angular/build:extract-i18n"
         },
         "test": {
-          "builder": "@angular/build:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+            "runner": "vitest",
+            "browsers": [
+              "firefox"
             ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "tsConfig": "tsconfig.spec.json",
+            "buildTarget": "::development"
           }
         }
       }
